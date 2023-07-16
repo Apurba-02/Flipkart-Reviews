@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+    <title>Review Page</title>
+  </head>
+  <body>
+    <div class="reviw-table">
+      <table cellspacing="0">
+        <th colspan="5" class="header">REVIEWS</th>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Customer Name</th>
+          <th>Rating</th>
+          <th>Comment</th>
+        </tr>
+        {% for review in reviews %}
+        <tr>
+          <td>{{review['Product']}}</td>
+          <td>{{review['Price']}}</td>
+          <td>{{review['Customer Name']}}</td>
+          <td>{{review['Rating']}}</td>
+          <td>{{review['Comment']}}</td>
+          {% endfor %}
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

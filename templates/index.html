@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Search</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h2>Flipkart Products Reviews</h2>
+        <div class="input-form">
+          <form action="/review" method="post">
+            <input class="search" type="text" placeholder="Enter product name"  name="content" id="content" />
+            <input class="btn" type="submit" value="Search" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="info">
+        <p>Made By Apurba</p>
+      </div>
+    </footer>
+  </body>
+</html>
