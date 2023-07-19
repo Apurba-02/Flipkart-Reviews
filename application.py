@@ -11,10 +11,12 @@ logging.basicConfig(filename="scrapper.log", level=logging.DEBUG)
 app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
+@cross_origin()
 def homepage():
     return render_template("index.html")
 
 @app.route("/review", methods=['POST', 'GET'])
+@cross_origin()
 def index():
     if request.method == 'POST':
         try:
@@ -71,7 +73,7 @@ def index():
                         logging.info('rating')
 
                     try:
-                        comment = comment_box.div.div.find('div', {'class': ''}).text.strip()
+                         comment = comment_box.div.div.find('div', {'class': ''}).text.strip()
                     except Exception as e:
                         comment = "N/A"
                         logging.info(e)
@@ -104,4 +106,5 @@ def index():
         return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    # app.run(host="0.0.0.0")
+    app.run(host='127.0.0.1', port=8000, debug=True)
